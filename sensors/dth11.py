@@ -20,7 +20,7 @@ import math
 class DTH11(object):
     def __init__(self):
         self.sensor = Adafruit_DHT.DHT11
-        self.pin = 21
+        self.pin = 11
         self.temperature = None
         self.humidity = None
 

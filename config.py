@@ -18,8 +18,8 @@ device_id = 'BCM2835-00000000ec2a41ff-9000c1'
 # BMP180 : Temperature,Pressure,Altitude
 # MQ135 : Air quality sensor based on SnO2 conductivity measurement
 # TODO : include in the documentation the unit of measure for each indicator
-dth11 = 0
-bmp180 = 1
+dth11 = 1
+bmp180 = 0
 mq135 = 0
 
 # TODO: next sensors to integrate
@@ -33,4 +33,4 @@ relay = 180
 
 # Parameter : endpoint
 # Define endpoint for the Rust Stream Gateway
-endpoint = 'http://127.0.0.1:8080/sensor_data'
+endpoint = 'http://0.0.0.0:8080/sensor_data'
