@@ -43,7 +43,7 @@ while True:
         }) """
 
     # If Enviromental
-    if config.dht11:
+    if config.dth11:
         # Set sensor type : Options are DHT11,DHT22 or AM2302
         sensor = Adafruit_DHT.DHT11
         # Set GPIO sensor is connected to
