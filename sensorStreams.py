@@ -13,7 +13,7 @@ import json
 
 # Import the libraries for each sensor
 from sensors.bmp180 import BMP180
-from sensors.dth11 import DTH11
+from sensors.dth11 import DHT11Result,DHT11
 from sensors.mq135 import MQ135
 
 # Use read_retry method. This will retry up to 15 times to
@@ -30,7 +30,7 @@ while True:
         "timestamp": str(timestamp)
     }
 
-    # If DHT11
+"""     # If DHT11
     if config.dth11:
         sensor = DTH11()
         build_json['iot2tangle'].append({
@@ -40,8 +40,24 @@ while True:
             }, {
                 "Humidity": str(sensor.get_humidity())
             }]
-        })
+        }) """
 
+    # If Enviromental
+    if config.dht11:
+        # Set sensor type : Options are DHT11,DHT22 or AM2302
+        sensor = Adafruit_DHT.DHT11
+        # Set GPIO sensor is connected to
+        gpio = 17
+        # Get Temp/Press/Hum values
+        humidity, temperature = Adafruit_DHT.read_retry(sensor, gpio)
+        build_json['iot2tangle'].append({
+            "sensor": "DHT11-environmental",
+            "data": [{
+                "Temp": str(temperature)
+            }, {
+                "Humidity": str(humidity)
+            }]
+        })
     # If MQ135
     if config.mq135:
         sensor = MQ135()
