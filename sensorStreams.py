@@ -30,8 +30,8 @@ while True:
         "timestamp": str(timestamp)
     }
 
-"""     # If DHT11
-    if config.dth11:
+     # If DHT11
+    """ if config.dth11:
         sensor = DTH11()
         build_json['iot2tangle'].append({
             "sensor": "DHT11 - Environmental",
