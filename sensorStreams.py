@@ -10,6 +10,7 @@ import time
 import config
 import requests
 import json
+import Adafruit_DHT
 
 # Import the libraries for each sensor
 from sensors.bmp180 import BMP180
